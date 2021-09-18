@@ -14,6 +14,8 @@
         prepend-icon="mdi-lock"
         type="password"
     />
+    <p class="subtitle red--text" v-if="errorMessage"> *email or password incorrect
+    </p>
     <v-btn
       class="mr-4"
       @click="submit"
@@ -29,7 +31,8 @@
       data: {
         email: '',
         password: '',
-      }
+      },
+      errorMessage: false
     }),
     computed: {
       
@@ -50,6 +53,9 @@
         .then((res) => {
           if (res.ok) {
             return res.json()
+          }
+          else {
+            this.errorMessage = true
           }
         })
         .then(data => {

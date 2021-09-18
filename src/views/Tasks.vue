@@ -3,7 +3,7 @@
         <addTaskDialog
             v-model="addTaskDialogBox"
             :value='editTaskData'/>
-        <v-card class="grey lighten-3 mt-3 pa-3">
+        <v-card class="secondary mt-3 pa-3">
             <v-row>
                 <v-col lg="2" md="3">
                     <v-btn width="100%" @click="addingTaskDialog" class="primary mt-3">Add Task

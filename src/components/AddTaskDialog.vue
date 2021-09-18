@@ -6,20 +6,20 @@
     @click:outside="$emit('change', false)"
     >
     <v-container class="white">
-        <h1 class="blue white--text pa-2 mb-4 headline" align="center">Add Task</h1>
+        <h1 class="primary white--text pa-2 mb-4 headline" align="center">Add Task</h1>
         <form>
             <v-text-field
                 v-model="value.title"
                 label="Title"
                 required
-                class="grey lighten-3 my-3"
+                class="blue my-3"
                 elevation="2"
             ></v-text-field>
             <v-textarea
                 v-model="value.description"
                 label="Description"
                 filles auto-grow
-                class="grey lighten-3 my-3"
+                class="blue my-3"
                 name="description"
             />
             <v-btn

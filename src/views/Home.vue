@@ -8,12 +8,12 @@
                 src="../assets/toDo.png"/>
             </v-col>
             <v-col>
-                <v-sheet class="pa-4 ma-4">
+                <v-sheet class="pa-4 white--text ma-4">
                     <v-tabs
                     v-model="tab"
                     dark
                     rounded
-                    background-color="blue"
+                    background-color="black"
                     slider-color="primary"
                     slider-size="6">
                     <v-tab rounded>

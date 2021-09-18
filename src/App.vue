@@ -10,6 +10,16 @@
       <v-toolbar-title class="headline font-weight-medium white--text">To-Do-Application</v-toolbar-title>
       <v-chip absolute class="black my-2"></v-chip>
       <v-spacer/>
+      <v-switch
+        v-model="$vuetify.theme.dark"
+        inset
+        color="white"
+        class="mt-4 mx-2"
+      >
+      <template v-slot:label>
+        <span class="white--text">Toggle Theme</span>
+      </template>
+      </v-switch>
       <v-btn @click="logout" v-show="$store.state.user.id !== ''" class="body-1" dark outlined> Log Out</v-btn>
     </v-app-bar>
     </v-card>
