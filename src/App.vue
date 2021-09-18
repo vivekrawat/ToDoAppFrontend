@@ -1,28 +1,42 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-card>
+    <v-app-bar
+    app
+    elevation="0"
+    class="blue mt-0 pa-0"
+    clipped-left
+    >
+      <v-toolbar-title class="headline font-weight-medium white--text">To-Do-Application</v-toolbar-title>
+      <v-chip absolute class="black my-2"></v-chip>
+      <v-spacer/>
+      <v-btn @click="logout" v-show="$store.state.user.id !== ''" class="body-1" dark outlined> Log Out</v-btn>
+    </v-app-bar>
+    </v-card>
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+  },
+  methods: {
+    logout() {
+      this.$store.state.user.id = ''
+      localStorage.setItem('id', '')
+      localStorage.setItem('token', '')
+      localStorage.setItem('email', '')
+      this.$router.replace({path: '/'})
+    }
+  },
+  data: () => ({
+    //
+  }),
+};
+</script>
